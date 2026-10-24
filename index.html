@@ -85,7 +85,7 @@
   /* phone */
   .phone { width: 100%; max-width: 300px; margin: 0 auto; border-radius: 34px; padding: 8px;
            background: #0E1218; box-shadow: var(--shadow), 0 30px 60px rgba(20, 30, 45, .18); }
-  .phone img { border-radius: 27px; width: 100%; aspect-ratio: 540 / 1200; object-fit: cover; background: #fff; }
+  .phone img, .phone video { border-radius: 27px; width: 100%; aspect-ratio: 540 / 1200; object-fit: cover; background: #F2F3F1; }
 
   /* sections */
   section { padding: 80px 0; }
@@ -190,7 +190,10 @@
         <a class="btn btn-ghost" href="#how">Як це працює</a>
       </div>
     </div>
-    <div class="phone"><img src="img/uk-1-what.webp" alt="Екран Деї: Тримає на карті без GPS" width="540" height="1200"></div>
+    <div class="phone"><video autoplay muted loop playsinline poster="img/hero-poster.jpg" aria-label="Дея веде маршрутом: GPS зникає, а позиція тримається на дорозі за датчиками й камерою">
+      <source src="img/hero.webm" type="video/webm">
+      <source src="img/hero.mp4" type="video/mp4">
+    </video></div>
   </div>
 </div>
 
@@ -271,11 +274,10 @@
     <h2>Подивіться, як Дея шукає дорогу</h2>
     <p class="sub">Хмара з тисяч можливих позицій, кожна на справжній дорозі. Що далі ви їдете, то точніше Дея знає, де ви.</p>
     <div class="video">
-      <video controls preload="none" playsinline poster="img/poster.jpg">
-        <source src="img/deya-explainer.mp4" type="video/mp4">
+      <video controls preload="none" playsinline poster="img/poster-uk.jpg">
+        <source src="img/deya-explainer-uk.mp4" type="video/mp4">
       </video>
     </div>
-    <p class="note">Підписи у відео англійською.</p>
   </div>
 </section>
 
@@ -347,6 +349,14 @@
     <a href="https://zheniaslius.github.io/deya-privacy/">Політика конфіденційності</a>
   </div>
 </footer>
+
+<script>
+  // Respect reduced motion: show the still frame instead of the looping hero animation.
+  if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    var v = document.querySelector('.hero video');
+    if (v) { v.removeAttribute('autoplay'); v.pause(); }
+  }
+</script>
 
 </body>
 </html>
