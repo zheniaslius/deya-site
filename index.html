@@ -154,6 +154,15 @@
   .final .sub { margin-left: auto; margin-right: auto; }
   .final .cta { justify-content: center; }
 
+  .install { text-align: left; max-width: 560px; margin: 40px auto 0; padding: 0; list-style: none; counter-reset: i; }
+  .install li { position: relative; padding: 14px 0 14px 46px; border-bottom: 1px solid var(--line); color: var(--muted); }
+  .install li:last-child { border-bottom: 0; }
+  .install li b { color: var(--text); font-weight: 600; }
+  .install li::before { counter-increment: i; content: counter(i); position: absolute; left: 0; top: 14px; width: 30px; height: 30px;
+                        border-radius: 50%; background: var(--blue-soft); color: var(--blue-ink); font-weight: 700; font-size: 15px;
+                        display: grid; place-items: center; }
+  .final .note { max-width: 560px; margin: 16px auto 0; }
+
   footer { border-top: 1px solid var(--line); padding: 28px 0 40px; font-size: 14px; color: var(--muted); }
   footer .wrap { display: flex; flex-wrap: wrap; gap: 12px 28px; justify-content: space-between; }
   footer a { color: var(--muted); }
@@ -167,7 +176,7 @@
     <nav>
       <a class="opt" href="#how">Як це працює</a>
       <a class="opt" href="#privacy">Приватність</a>
-      <a href="#install">Встановити</a>
+      <a href="#install">Завантажити</a>
     </nav>
   </div>
 </header>
@@ -183,12 +192,13 @@
         Вона рахує рух авто за датчиками телефона й задньою камерою та звіряє його з
         офлайн-картою вашого міста.</p>
       <div class="cta">
-        <a class="btn btn-primary" href="#install">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.2 2.6c-.2.2-.3.6-.3 1v16.8c0 .4.1.8.3 1l9.3-9.4-9.3-9.4Zm10.4 10.5 2.6 2.6-11 6.3 8.4-8.9Zm0-2.2L6.2 2l11 6.3-2.6 2.6Zm3.7.1 2.6 1.5c.8.5.8 1.2 0 1.6l-2.6 1.5-2.8-2.8 2.8-2.8Z"/></svg>
-          Встановити Дею
+        <a class="btn btn-primary" href="https://github.com/zheniaslius/deya-site/releases/latest/download/deya.apk" download>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 10.5 5 5 5-5"/><path d="M5 20h14"/></svg>
+          Завантажити для Android
         </a>
-        <a class="btn btn-ghost" href="#how">Як це працює</a>
+        <a class="btn btn-ghost" href="#install">Як встановити</a>
       </div>
+      <span class="soon">Безкоштовно · Android 8.0 або новіший<span class="apk-meta"></span></span>
     </div>
     <div class="phone"><video autoplay muted loop playsinline poster="img/hero-poster.jpg" aria-label="Дея веде маршрутом: GPS зникає, а позиція тримається на дорозі за датчиками й камерою">
       <source src="img/hero.webm" type="video/webm">
@@ -331,13 +341,23 @@
   <div class="wrap">
     <img class="icon" src="img/icon.png" alt="Значок Деї: біла вівця на синьому" width="96" height="96">
     <h2>Будьте на карті, навіть коли GPS немає</h2>
-    <p class="sub">Дея зовсім скоро з’явиться в Google Play.</p>
+    <p class="sub">Завантажте Дею прямо з цього сайту. У Google Play вона з’явиться згодом.</p>
     <div class="cta">
-      <a class="btn btn-primary" href="#install" aria-disabled="true">
-        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.2 2.6c-.2.2-.3.6-.3 1v16.8c0 .4.1.8.3 1l9.3-9.4-9.3-9.4Zm10.4 10.5 2.6 2.6-11 6.3 8.4-8.9Zm0-2.2L6.2 2l11 6.3-2.6 2.6Zm3.7.1 2.6 1.5c.8.5.8 1.2 0 1.6l-2.6 1.5-2.8-2.8 2.8-2.8Z"/></svg>
-        Скоро в Google Play
+      <a class="btn btn-primary" href="https://github.com/zheniaslius/deya-site/releases/latest/download/deya.apk" download>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 10.5 5 5 5-5"/><path d="M5 20h14"/></svg>
+        Завантажити APK
       </a>
     </div>
+    <span class="soon">Android 8.0 або новіший<span class="apk-meta"></span></span>
+
+    <ol class="install">
+      <li><b>Завантажте файл</b> кнопкою вище на телефоні з Android.</li>
+      <li><b>Відкрийте його</b> зі сповіщення або з папки «Завантаження».</li>
+      <li><b>Дозвольте встановлення.</b> Android попросить дозволу встановлювати застосунки з браузера: натисніть «Налаштування» й увімкніть «Дозволити з цього джерела».</li>
+      <li><b>Натисніть «Встановити».</b> Якщо Play Protect попередить про невідомий застосунок, оберіть «Усе одно встановити».</li>
+    </ol>
+    <p class="note">Оновлення теж з’являтимуться тут: просто завантажте й встановіть нову версію поверх старої.
+      <a href="https://github.com/zheniaslius/deya-site/releases">Усі версії</a></p>
   </div>
 </section>
 
@@ -351,6 +371,21 @@
 </footer>
 
 <script>
+  // Version and size of the latest APK, from the GitHub release.
+  fetch('https://api.github.com/repos/zheniaslius/deya-site/releases/latest')
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(function (rel) {
+      if (!rel) return;
+      var apk = (rel.assets || []).filter(function (a) { return a.name === 'deya.apk'; })[0];
+      if (!apk) return;
+      var mb = (apk.size / 1048576).toFixed(0).replace('.', ',');
+      var v = (rel.tag_name || '').replace(/^v/, '');
+      document.querySelectorAll('.apk-meta').forEach(function (el) {
+        el.textContent = ' · версія ' + v + ' · ' + mb + ' МБ';
+      });
+    })
+    .catch(function () {});
+
   // Respect reduced motion: show the still frame instead of the looping hero animation.
   if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) {
     var v = document.querySelector('.hero video');
