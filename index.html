@@ -186,6 +186,15 @@
                         display: grid; place-items: center; }
   .final .note { max-width: 560px; margin: 16px auto 0; }
 
+  .community { display: flex; align-items: center; gap: 18px; text-align: left; max-width: 560px; margin: 40px auto 0; padding: 20px 22px;
+               background: var(--card); border: 1px solid var(--edge); border-radius: 24px; box-shadow: var(--shadow); }
+  .community .tg { width: 52px; height: 52px; flex: none; border-radius: 16px; background: var(--blue-soft); color: var(--blue-ink); display: grid; place-items: center; }
+  .community .tg svg { width: 26px; height: 26px; }
+  .community h3 { margin: 0 0 4px; font-size: 18px; }
+  .community p { margin: 0; font-size: 15px; color: var(--muted); }
+  .community .btn { margin-left: auto; height: 44px; padding: 0 18px; flex: none; }
+  @media (max-width: 560px) { .community { flex-wrap: wrap; } .community .btn { margin-left: 0; width: 100%; justify-content: center; } }
+
   footer { border-top: 1px solid var(--line); padding: 28px 0 40px; font-size: 14px; color: var(--muted); }
   footer .wrap { display: flex; flex-wrap: wrap; gap: 12px 28px; justify-content: space-between; }
   footer a { color: var(--muted); }
@@ -381,6 +390,15 @@
     </ol>
     <p class="note">Оновлення теж з’являтимуться тут: просто завантажте й встановіть нову версію поверх старої.
       <a href="https://github.com/zheniaslius/deya-site/releases">Усі версії</a></p>
+
+    <div class="community">
+      <span class="tg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m21.5 3.5-19 7.3 6.4 2.4 2.4 6.3 3.6-4.4 4.6 3.4z"/><path d="m8.9 13.2 8.6-6.2"/></svg></span>
+      <div>
+        <h3>Поділіться досвідом</h3>
+        <p>Розкажіть, як Дея впоралася у вашому місті, що заважає й чого бракує. Читаємо все.</p>
+      </div>
+      <a class="btn btn-primary" href="https://t.me/+3Qa5_fcYy3pjNTUy" target="_blank" rel="noopener">Спільнота в Telegram</a>
+    </div>
   </div>
 </section>
 
@@ -389,7 +407,7 @@
 <footer>
   <div class="wrap">
     <span>© 2026 Дея. Карти © учасники <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>, фон карти <a href="https://protomaps.com">Protomaps</a>.</span>
-    <a href="https://zheniaslius.github.io/deya-privacy/">Політика конфіденційності</a>
+    <span><a href="https://t.me/+3Qa5_fcYy3pjNTUy" target="_blank" rel="noopener">Telegram-спільнота</a> · <a href="https://zheniaslius.github.io/deya-privacy/">Політика конфіденційності</a></span>
   </div>
 </footer>
 
@@ -412,6 +430,10 @@
   // GA4 doesn't count .apk files as downloads on its own, so send an event for the APK buttons.
   document.querySelectorAll('a[href$="/deya.apk"]').forEach(function (a) {
     a.addEventListener('click', function () { gtag('event', 'download_apk', { link_url: a.href }); });
+  });
+
+  document.querySelectorAll('a[href^="https://t.me/"]').forEach(function (a) {
+    a.addEventListener('click', function () { gtag('event', 'open_telegram', { link_url: a.href }); });
   });
 
   // Respect reduced motion: show the still frame instead of the looping hero animation.
