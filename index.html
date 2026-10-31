@@ -224,7 +224,7 @@
         Вона рахує рух авто за датчиками телефона й задньою камерою та звіряє його з
         офлайн-картою вашого міста.</p>
       <div class="cta">
-        <a class="btn btn-primary" href="https://github.com/zheniaslius/deya-site/releases/latest/download/deya.apk" download>
+        <a class="btn btn-primary" href="https://github.com/zheniaslius/deya-site/releases/latest/download/deya.apk" download data-place="hero">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 10.5 5 5 5-5"/><path d="M5 20h14"/></svg>
           Завантажити для Android
         </a>
@@ -375,7 +375,7 @@
     <h2>Будьте на карті, навіть коли GPS немає</h2>
     <p class="sub">Завантажте Дею прямо з цього сайту. У Google Play вона з’явиться згодом.</p>
     <div class="cta">
-      <a class="btn btn-primary" href="https://github.com/zheniaslius/deya-site/releases/latest/download/deya.apk" download>
+      <a class="btn btn-primary" href="https://github.com/zheniaslius/deya-site/releases/latest/download/deya.apk" download data-place="install">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 10.5 5 5 5-5"/><path d="M5 20h14"/></svg>
         Завантажити APK
       </a>
@@ -413,6 +413,7 @@
 
 <script>
   // Version and size of the latest APK, from the GitHub release.
+  var apkVersion = '';
   fetch('https://api.github.com/repos/zheniaslius/deya-site/releases/latest')
     .then(function (r) { return r.ok ? r.json() : null; })
     .then(function (rel) {
@@ -421,15 +422,33 @@
       if (!apk) return;
       var mb = (apk.size / 1048576).toFixed(0).replace('.', ',');
       var v = (rel.tag_name || '').replace(/^v/, '');
+      apkVersion = v;
       document.querySelectorAll('.apk-meta').forEach(function (el) {
         el.textContent = ' · версія ' + v + ' · ' + mb + ' МБ';
       });
     })
     .catch(function () {});
 
-  // GA4 doesn't count .apk files as downloads on its own, so send an event for the APK buttons.
+  // GA4 doesn't count .apk files as downloads on its own, so send events for the APK buttons:
+  // download_apk (our own, mark it as a key event in GA) and GA4's standard file_download,
+  // so the APK also shows up in GA's built-in file download reports.
+  // auxclick catches middle-click / "open in new tab"; beacon transport survives the page navigating away.
+  function trackApk(a) {
+    var params = {
+      link_url: a.href,
+      link_text: a.textContent.trim(),
+      file_name: 'deya.apk',
+      file_extension: 'apk',
+      button_place: a.getAttribute('data-place') || '',
+      app_version: apkVersion,
+      transport_type: 'beacon'
+    };
+    gtag('event', 'download_apk', params);
+    gtag('event', 'file_download', params);
+  }
   document.querySelectorAll('a[href$="/deya.apk"]').forEach(function (a) {
-    a.addEventListener('click', function () { gtag('event', 'download_apk', { link_url: a.href }); });
+    a.addEventListener('click', function () { trackApk(a); });
+    a.addEventListener('auxclick', function (e) { if (e.button === 1) trackApk(a); });
   });
 
   document.querySelectorAll('a[href^="https://t.me/"]').forEach(function (a) {
