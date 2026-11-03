@@ -208,7 +208,7 @@
     <nav>
       <a class="opt" href="#how">Як це працює</a>
       <a class="opt" href="#privacy">Приватність</a>
-      <a href="#install">Завантажити</a>
+      <a href="#install">Бета-тест</a>
     </nav>
   </div>
 </header>
@@ -224,13 +224,12 @@
         Вона рахує рух авто за датчиками телефона й задньою камерою та звіряє його з
         офлайн-картою вашого міста.</p>
       <div class="cta">
-        <a class="btn btn-primary" href="https://github.com/zheniaslius/deya-site/releases/latest/download/deya.apk" download data-place="hero">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 10.5 5 5 5-5"/><path d="M5 20h14"/></svg>
-          Завантажити для Android
+        <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.yourname.deya" target="_blank" rel="noopener">
+          Приєднатися до бета-тесту на Android
         </a>
-        <a class="btn btn-ghost" href="#install">Як встановити</a>
+        <a class="btn btn-ghost" href="https://play.google.com/apps/testing/com.yourname.deya" target="_blank" rel="noopener">Приєднатися у вебі</a>
       </div>
-      <span class="soon">Безкоштовно · Android 8.0 або новіший<span class="apk-meta"></span></span>
+      <span class="soon">Закрите бета-тестування · Android 8.0 або новіший</span>
     </div>
     <div class="phone"><video autoplay muted loop playsinline poster="img/hero-poster.jpg" aria-label="Дея веде маршрутом: GPS зникає, а позиція тримається на дорозі за датчиками й камерою">
       <source src="img/hero.webm" type="video/webm">
@@ -372,24 +371,17 @@
 <section class="alt final" id="install">
   <div class="wrap">
     <img class="icon" src="img/icon.png" alt="Значок Деї: біла вівця на синьому" width="96" height="96">
-    <h2>Будьте на карті, навіть коли GPS немає</h2>
-    <p class="sub">Завантажте Дею прямо з цього сайту. У Google Play вона з’явиться згодом.</p>
+    <h2>Як приєднатися до закритого бета-тестування</h2>
+    <p class="sub">Оберіть зручний спосіб. Після приєднання до тесту встановіть Дею через Google Play.</p>
     <div class="cta">
-      <a class="btn btn-primary" href="https://github.com/zheniaslius/deya-site/releases/latest/download/deya.apk" download data-place="install">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 10.5 5 5 5-5"/><path d="M5 20h14"/></svg>
-        Завантажити APK
-      </a>
+      <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.yourname.deya" target="_blank" rel="noopener">Приєднатися на Android</a>
+      <a class="btn btn-ghost" href="https://play.google.com/apps/testing/com.yourname.deya" target="_blank" rel="noopener">Приєднатися у вебі</a>
     </div>
-    <span class="soon">Android 8.0 або новіший<span class="apk-meta"></span></span>
-
     <ol class="install">
-      <li><b>Завантажте файл</b> кнопкою вище на телефоні з Android.</li>
-      <li><b>Відкрийте його</b> зі сповіщення або з папки «Завантаження».</li>
-      <li><b>Дозвольте встановлення.</b> Android попросить дозволу встановлювати застосунки з браузера: натисніть «Налаштування» й увімкніть «Дозволити з цього джерела».</li>
-      <li><b>Натисніть «Встановити».</b> Якщо Play Protect попередить про невідомий застосунок, оберіть «Усе одно встановити».</li>
+      <li><b>На Android:</b> відкрийте сторінку тесту в Google Play і приєднайтеся до нього.</li>
+      <li><b>У вебі:</b> відкрийте сторінку тестування та натисніть «Стати тестувальником».</li>
+      <li>Після цього встановіть або оновіть Дею з Google Play.</li>
     </ol>
-    <p class="note">Оновлення теж з’являтимуться тут: просто завантажте й встановіть нову версію поверх старої.
-      <a href="https://github.com/zheniaslius/deya-site/releases">Усі версії</a></p>
 
     <div class="community">
       <span class="tg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m21.5 3.5-19 7.3 6.4 2.4 2.4 6.3 3.6-4.4 4.6 3.4z"/><path d="m8.9 13.2 8.6-6.2"/></svg></span>
@@ -412,44 +404,7 @@
 </footer>
 
 <script>
-  // Version and size of the latest APK, from the GitHub release.
-  var apkVersion = '';
-  fetch('https://api.github.com/repos/zheniaslius/deya-site/releases/latest')
-    .then(function (r) { return r.ok ? r.json() : null; })
-    .then(function (rel) {
-      if (!rel) return;
-      var apk = (rel.assets || []).filter(function (a) { return a.name === 'deya.apk'; })[0];
-      if (!apk) return;
-      var mb = (apk.size / 1048576).toFixed(0).replace('.', ',');
-      var v = (rel.tag_name || '').replace(/^v/, '');
-      apkVersion = v;
-      document.querySelectorAll('.apk-meta').forEach(function (el) {
-        el.textContent = ' · версія ' + v + ' · ' + mb + ' МБ';
-      });
-    })
-    .catch(function () {});
 
-  // GA4 doesn't count .apk files as downloads on its own, so send events for the APK buttons:
-  // download_apk (our own, mark it as a key event in GA) and GA4's standard file_download,
-  // so the APK also shows up in GA's built-in file download reports.
-  // auxclick catches middle-click / "open in new tab"; beacon transport survives the page navigating away.
-  function trackApk(a) {
-    var params = {
-      link_url: a.href,
-      link_text: a.textContent.trim(),
-      file_name: 'deya.apk',
-      file_extension: 'apk',
-      button_place: a.getAttribute('data-place') || '',
-      app_version: apkVersion,
-      transport_type: 'beacon'
-    };
-    gtag('event', 'download_apk', params);
-    gtag('event', 'file_download', params);
-  }
-  document.querySelectorAll('a[href$="/deya.apk"]').forEach(function (a) {
-    a.addEventListener('click', function () { trackApk(a); });
-    a.addEventListener('auxclick', function (e) { if (e.button === 1) trackApk(a); });
-  });
 
   document.querySelectorAll('a[href^="https://t.me/"]').forEach(function (a) {
     a.addEventListener('click', function () { gtag('event', 'open_telegram', { link_url: a.href }); });
