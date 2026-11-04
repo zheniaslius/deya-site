@@ -18,9 +18,9 @@
   }
 </script>
 <title>Дея — навігатор без GPS</title>
-<meta name="description" content="Дея — офлайн-навігатор для Android, який тримає вас на карті, коли GPS глушать або підмінюють. Працює на датчиках руху, камері й карті OpenStreetMap. Фото й відео не залишають телефон.">
+<meta name="description" content="Дея — офлайн-навігатор для Android, який тримає вас на карті, коли GPS глушать або підмінюють. Працює на датчиках руху, камері й карті OpenStreetMap.">
 <meta property="og:title" content="Дея — навігатор без GPS">
-<meta property="og:description" content="Тримає вас на карті, коли GPS глушать або підмінюють. Офлайн, без реклами, фото й відео не залишають телефон.">
+<meta property="og:description" content="Тримає вас на карті, коли GPS глушать або підмінюють. Офлайн, без реклами й аналітики.">
 <meta property="og:image" content="img/icon.png">
 <meta name="theme-color" content="#2F6BFF">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -208,7 +208,7 @@
     <nav>
       <a class="opt" href="#how">Як це працює</a>
       <a class="opt" href="#privacy">Приватність</a>
-      <a href="#install">Бета-тест</a>
+      <a href="#install">Завантажити</a>
     </nav>
   </div>
 </header>
@@ -224,11 +224,13 @@
         Вона рахує рух авто за датчиками телефона й задньою камерою та звіряє його з
         офлайн-картою вашого міста.</p>
       <div class="cta">
-        <a class="btn btn-primary" href="#install">
-          Як приєднатися до бета-тесту
+        <a class="btn btn-primary" href="https://github.com/zheniaslius/deya-site/releases/latest/download/deya.apk" download data-place="hero">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 10.5 5 5 5-5"/><path d="M5 20h14"/></svg>
+          Завантажити APK
         </a>
+        <a class="btn btn-ghost" href="#install">Бета-тест у Google Play</a>
       </div>
-      <span class="soon">Закрите бета-тестування · Android 8.0 або новіший</span>
+      <span class="soon">Безкоштовно · Android 8.0 або новіший<span class="apk-meta"></span></span>
     </div>
     <div class="phone"><video autoplay muted loop playsinline poster="img/hero-poster.jpg" aria-label="Дея веде маршрутом: GPS зникає, а позиція тримається на дорозі за датчиками й камерою">
       <source src="img/hero.webm" type="video/webm">
@@ -329,11 +331,11 @@
     <div>
       <p class="eyebrow">Приватність</p>
       <h2>Камера дивиться на дорогу, а не в інтернет</h2>
-      <p class="sub" style="margin-bottom:24px">Камера потрібна, щоб Дея працювала без GPS. Тому зображення з неї ніколи не залишають ваш телефон.</p>
+      <p class="sub" style="margin-bottom:24px">Камера потрібна, щоб Дея вимірювала швидкість без GPS. Кадри для відстеження руху аналізуються в пам’яті телефона й одразу зникають.</p>
       <ul class="list">
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Фото й відео нікуди не надсилаються.</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Фото й відео нікуди не надсилаються, якщо ви самі не ввімкнете опцію «Шукати місце старту через Gemini» (тоді під час глушіння GPS на старті надсилаються 2 малі знімки дороги в Google Gemini, щоб звузити коло старту; кадри не зберігаються).</li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>У застосунку немає облікових записів, реклами й аналітики.</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Визначення місця й навігація працюють без інтернету.</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Визначення місця й навігація під час руху працюють без інтернету.</li>
       </ul>
       <a href="https://zheniaslius.github.io/deya-privacy/">Політика конфіденційності</a>
     </div>
@@ -346,7 +348,7 @@
     <h2>Часті запитання</h2>
     <details>
       <summary>Чи потрібен інтернет?</summary>
-      <p>Лише щоб завантажити карту свого міста. Далі Дея визначає місце й прокладає маршрут повністю офлайн.</p>
+      <p>Лише щоб завантажити карту свого міста (та за бажанням уточнити коло старту через Gemini, якщо ви самі ввімкнули цю опцію). Далі Дея визначає місце й прокладає маршрут повністю офлайн.</p>
     </details>
     <details>
       <summary>Який телефон підійде?</summary>
@@ -370,18 +372,20 @@
 <section class="alt final" id="install">
   <div class="wrap">
     <img class="icon" src="img/icon.png" alt="Значок Деї: біла вівця на синьому" width="96" height="96">
-    <h2>Як приєднатися до закритого бета-тестування</h2>
-    <p class="sub">Спершу приєднайтеся до групи тестувальників, а потім відкрийте посилання для Android або вебу.</p>
-    <ol class="install">
-      <li><b>Приєднайтеся до групи тестувальників</b> Google: <a href="https://groups.google.com/g/deya-testing" target="_blank" rel="noopener">deya-testing</a>.</li>
-      <li><b>Оберіть спосіб приєднання до тесту:</b></li>
-    </ol>
+    <h2>Встановіть Дею на Android</h2>
+    <p class="sub">Завантажте APK прямо з цього сайту або приєднайтеся до бета-тестування в Google Play.</p>
     <div class="cta">
-      <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.yourname.deya" target="_blank" rel="noopener">Приєднатися на Android</a>
-      <a class="btn btn-ghost" href="https://play.google.com/apps/testing/com.yourname.deya" target="_blank" rel="noopener">Приєднатися у вебі</a>
+      <a class="btn btn-primary" href="https://github.com/zheniaslius/deya-site/releases/latest/download/deya.apk" download data-place="install">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 10.5 5 5 5-5"/><path d="M5 20h14"/></svg>
+        Завантажити APK
+      </a>
     </div>
-    <ol class="install" style="counter-reset: i 1">
-      <li>На сторінці тестування приєднайтеся до тесту, а потім встановіть або оновіть Дею з Google Play.</li>
+    <span class="soon">Android 8.0 або новіший<span class="apk-meta"></span> · <a href="https://github.com/zheniaslius/deya-site/releases">Усі версії</a></span>
+
+    <ol class="install">
+      <li><b>Завантажте APK</b> кнопкою вище на телефоні з Android, відкрийте файл і дозвольте встановлення з браузера (якщо Play Protect попередить про невідомий застосунок — оберіть «Усе одно встановити»).</li>
+      <li><b>Або через Google Play (закритий бета-тест):</b> спершу приєднайтеся до групи тестувальників <a href="https://groups.google.com/g/deya-testing" target="_blank" rel="noopener">deya-testing</a>.</li>
+      <li>Після приєднання до групи відкрийте сторінку тесту <a href="https://play.google.com/store/apps/details?id=com.yourname.deya" target="_blank" rel="noopener">на Android</a> або <a href="https://play.google.com/apps/testing/com.yourname.deya" target="_blank" rel="noopener">у вебі</a>, натисніть «Стати тестувальником» і встановіть Дею з Google Play.</li>
     </ol>
 
     <div class="community">
@@ -405,7 +409,41 @@
 </footer>
 
 <script>
+  // Version and size of the latest APK, from the GitHub release.
+  var apkVersion = '';
+  fetch('https://api.github.com/repos/zheniaslius/deya-site/releases/latest')
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(function (rel) {
+      if (!rel) return;
+      var apk = (rel.assets || []).filter(function (a) { return a.name === 'deya.apk'; })[0];
+      if (!apk) return;
+      var mb = (apk.size / 1048576).toFixed(0).replace('.', ',');
+      var v = (rel.tag_name || '').replace(/^v/, '');
+      apkVersion = v;
+      document.querySelectorAll('.apk-meta').forEach(function (el) {
+        el.textContent = ' · версія ' + v + ' · ' + mb + ' МБ';
+      });
+    })
+    .catch(function () {});
 
+  function trackApk(a) {
+    var params = {
+      link_url: a.href,
+      link_text: a.textContent.trim(),
+      file_name: 'deya.apk',
+      file_extension: 'apk',
+      button_place: a.getAttribute('data-place') || '',
+      app_version: apkVersion,
+      transport_type: 'beacon'
+    };
+    gtag('event', 'download_apk', params);
+    gtag('event', 'file_download', params);
+  }
+  document.querySelectorAll('a[href$="/deya.apk"]').forEach(function (a) {
+    a.addEventListener('click', function () { trackApk(a); });
+    a.addEventListener('auxclick', function (e) { if (e.button === 1) trackApk(a); });
+  }
+  );
 
   document.querySelectorAll('a[href^="https://t.me/"]').forEach(function (a) {
     a.addEventListener('click', function () { gtag('event', 'open_telegram', { link_url: a.href }); });
