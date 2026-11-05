@@ -17,15 +17,110 @@
     gtag('config', GA_ID);
   }
 </script>
-<title>Дея — навігатор без GPS</title>
-<meta name="description" content="Дея — офлайн-навігатор для Android, який тримає вас на карті, коли GPS глушать або підмінюють. Працює на датчиках руху, камері й карті OpenStreetMap.">
-<meta property="og:title" content="Дея — навігатор без GPS">
-<meta property="og:description" content="Тримає вас на карті, коли GPS глушать або підмінюють. Офлайн, без реклами й аналітики.">
-<meta property="og:image" content="img/icon.png">
+<title>Дея — навігація без GPS: офлайн-навігатор при глушінні GPS</title>
+<meta name="description" content="Дея — безкоштовний офлайн-навігатор для Android. Тримає вас на карті, коли GPS глушать або підмінюють: працює на датчиках руху, задній камері й карті OpenStreetMap.">
+<link rel="canonical" href="https://getdeya.space/">
+<link rel="alternate" hreflang="uk" href="https://getdeya.space/">
+<link rel="alternate" hreflang="x-default" href="https://getdeya.space/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Дея">
+<meta property="og:locale" content="uk_UA">
+<meta property="og:url" content="https://getdeya.space/">
+<meta property="og:title" content="Дея — навігація без GPS, коли його глушать">
+<meta property="og:description" content="Безкоштовний офлайн-навігатор для Android: тримає вас на карті, коли GPS глушать або підмінюють. Без реклами й аналітики в застосунку.">
+<meta property="og:image" content="https://getdeya.space/img/icon.png">
+<meta property="og:image:alt" content="Значок Деї: біла вівця на синьому">
+<meta name="twitter:card" content="summary">
 <meta name="theme-color" content="#2F6BFF">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebSite",
+   "@id": "https://getdeya.space/#site",
+   "url": "https://getdeya.space/",
+   "name": "Дея",
+   "inLanguage": "uk"
+  },
+  {
+   "@type": "MobileApplication",
+   "@id": "https://getdeya.space/#app",
+   "name": "Дея",
+   "alternateName": "Deya",
+   "description": "Офлайн-навігатор для Android, який тримає вас на карті, коли GPS глушать або підмінюють. Працює на датчиках руху, камері й карті OpenStreetMap.",
+   "applicationCategory": "NavigationApplication",
+   "operatingSystem": "Android 8.0+",
+   "inLanguage": "uk",
+   "url": "https://getdeya.space/",
+   "image": "https://getdeya.space/img/icon.png",
+   "downloadUrl": "https://github.com/zheniaslius/deya-site/releases/latest/download/deya.apk",
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "UAH"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Чи потрібен інтернет?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Лише щоб завантажити карту свого міста (та за бажанням уточнити коло старту через Gemini, якщо ви самі ввімкнули цю опцію). Далі Дея визначає місце й прокладає маршрут повністю офлайн."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Який телефон підійде?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Смартфон на Android 8.0 або новішому, з задньою камерою, гіроскопом і акселерометром. Майже всі сучасні телефони мають їх."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Наскільки точно без GPS?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "У місті, де багато поворотів, Дея зазвичай тримає вас на правильній вулиці. На довгих прямих дорогах без поворотів похибка поступово росте, а щойно з’являється поворот чи справжній GPS, позиція знову уточнюється. Якщо Дея загубилася, торкніться кнопки з міткою й покажіть на карті, де ви."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "А якщо GPS заглушено вже на старті?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Дея бере приблизне місце від Wi-Fi чи мобільної мережі, а далі впізнає, де ви, за формою шляху: повороти, які ви проїхали, порівнюються з вулицями карти. Зазвичай за 300–600 метрів їзди стрілка стає на правильну вулицю. Швидше за все працює, якщо ввімкнено камеру."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Чи сильно сідає батарея?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Камера й датчики працюють увесь час поїздки, тож у довгих поїздках краще тримати телефон на зарядці."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Чому саме «Дея»?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Від мему з вівцею, яка питає «Де я?». Тепер у неї є відповідь."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
 <link rel="icon" href="img/icon-32.png" sizes="32x32">
 <link rel="apple-touch-icon" href="img/icon-180.png">
 <style>
