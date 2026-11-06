@@ -21,6 +21,7 @@
 <meta name="description" content="Дея — безкоштовний офлайн-навігатор для Android. Тримає вас на карті, коли GPS глушать або підмінюють: працює на датчиках руху, задній камері й карті OpenStreetMap.">
 <link rel="canonical" href="https://getdeya.space/">
 <link rel="alternate" hreflang="uk" href="https://getdeya.space/">
+<link rel="alternate" hreflang="en" href="https://getdeya.space/en/">
 <link rel="alternate" hreflang="x-default" href="https://getdeya.space/">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta property="og:type" content="website">
@@ -170,6 +171,10 @@
   header nav a:hover { color: var(--text); }
   @media (max-width: 560px) { header nav .opt { display: none; } }
 
+  .lang { font-size: 13px; font-weight: 600; letter-spacing: .04em; padding: 4px 10px; border-radius: 999px;
+          border: 1px solid var(--line); color: var(--muted); text-decoration: none; }
+  .lang:hover { color: var(--text); border-color: var(--muted); }
+
   /* buttons */
   .btn { display: inline-flex; align-items: center; gap: 10px; height: 52px; padding: 0 24px;
          border-radius: 18px; font-weight: 600; font-size: 16px; text-decoration: none; border: 0;
@@ -304,6 +309,7 @@
       <a class="opt" href="#how">Як це працює</a>
       <a class="opt" href="#privacy">Приватність</a>
       <a href="#install">Завантажити</a>
+      <a class="lang" href="en/" hreflang="en" lang="en" title="English version">EN</a>
     </nav>
   </div>
 </header>

@@ -1,11 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://getdeya.space/</loc>
-    <lastmod>2026-11-05</lastmod>
+    <lastmod>2026-11-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://getdeya.space/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://getdeya.space/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://getdeya.space/"/>
+  </url>
+  <url>
+    <loc>https://getdeya.space/en/</loc>
+    <lastmod>2026-11-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://getdeya.space/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://getdeya.space/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://getdeya.space/"/>
   </url>
   <url>
     <loc>https://getdeya.space/navihatsiia-bez-internetu/</loc>
-    <lastmod>2026-11-05</lastmod>
+    <lastmod>2026-11-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://getdeya.space/navihatsiia-bez-internetu/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://getdeya.space/en/navigation-without-internet/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://getdeya.space/navihatsiia-bez-internetu/"/>
+  </url>
+  <url>
+    <loc>https://getdeya.space/en/navigation-without-internet/</loc>
+    <lastmod>2026-11-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://getdeya.space/navihatsiia-bez-internetu/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://getdeya.space/en/navigation-without-internet/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://getdeya.space/navihatsiia-bez-internetu/"/>
   </url>
 </urlset>
