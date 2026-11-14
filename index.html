@@ -148,7 +148,7 @@
   <div class="wrap">
     <div>
       <span class="status mono"><span class="dot blink"></span>GPS заглушено <span class="long"><span class="sep">/</span> позиція: датчики + камера + карта</span></span>
-      <h1>Знає, де ви. <span class="hl">Навіть коли GPS бреше.</span></h1>
+      <h1>Навігатор, що веде далі, <span class="hl">навіть коли GPS бреше.</span></h1>
       <p class="lead">Дея — безкоштовний офлайн-навігатор для Android. Коли GPS глушать або підмінюють,
         вона <b>веде вас далі</b> за датчиками телефона, задньою камерою та картою вашого міста.</p>
       <div class="cta">
@@ -160,19 +160,19 @@
       </div>
       <p class="meta label"><span>Безкоштовно</span><span>Android 8.0+</span><span class="apk-meta" hidden></span></p>
     </div>
-    <div class="scope">
-      <video autoplay muted loop playsinline poster="img/hero-3d-poster.jpg" aria-label="Нічний Київ у 3D: точка позиції їде вулицею, а фальшивий GPS-сигнал відскакує вбік">
-        <source src="img/hero-3d.webm" type="video/webm">
-        <source src="img/hero-3d.mp4" type="video/mp4">
-      </video>
-      <div class="shade"></div>
-      <div class="hud top"><span>Київ<span class="opt"> · нічна поїздка</span></span><span class="coords">50.4501° N · 30.5234° E</span></div>
-      <div class="hud bot">
-        <div class="row"><span class="k">GPS</span><span class="gps warn">Заглушено</span></div>
-        <div class="row"><span class="k">Джерело</span><span>Датчики · камера · карта</span></div>
-        <div class="row"><span class="k">На дорозі</span><span class="ok">Так</span></div>
+    <div class="demo">
+      <div class="handset"><video autoplay muted loop playsinline poster="img/hero-poster.jpg" aria-label="Запис екрана Деї: GPS зникає, а навігація веде далі за камерою й датчиками">
+        <source src="img/hero.webm" type="video/webm">
+        <source src="img/hero.mp4" type="video/mp4">
+      </video></div>
+      <div class="readout">
+        <p class="label">Запис екрана · 12 с</p>
+        <div class="ro"><span class="k label">GPS</span><span class="v gps"></span></div>
+        <div class="ro"><span class="k label">Позицію веде</span><span class="v src"></span></div>
+        <div class="ro"><span class="k label">Маршрут</span><span class="v ok">Веде далі</span></div>
+        <p class="cap"></p>
       </div>
-      <div class="frame"></div><i class="c tl"></i><i class="c tr"></i><i class="c bl"></i><i class="c br"></i>
+      <i class="c tl"></i><i class="c tr"></i><i class="c bl"></i><i class="c br"></i>
     </div>
   </div>
   <div class="specs">
@@ -387,7 +387,10 @@
 </footer>
 
 <script>
-  var L = { ver: 'Версія ', mb: ' МБ', jam: 'Заглушено', fake: 'Фальшивий · ігнорую' };
+  var L = { ver: 'Версія ', mb: ' МБ', demo: [
+    { t: 0,   gps: 'Працює',     src: 'Супутники',       c: 'ok',   cap: 'GPS у нормі. Дея веде за ним і калібрує камеру та датчики.' },
+    { t: 2.5, gps: 'Заглушено',  src: 'Камера + датчики', c: 'warn', cap: 'GPS зник. Дея далі веде маршрутом за камерою, датчиками й картою.' },
+    { t: 9.5, gps: 'Повернувся', src: 'Супутники',       c: 'ok',   cap: 'GPS повернувся, і позиція збігається. Ви весь час були на маршруті.' } ] };
 </script>
 <script src="assets/site.js"></script>
 
