@@ -107,7 +107,7 @@
   <div class="wrap">
     <div>
       <span class="status mono"><span class="dot blink"></span>GPS jammed <span class="long"><span class="sep">/</span> position: sensors + camera + map</span></span>
-      <h1>Knows where you are. <span class="hl">Even when GPS lies.</span></h1>
+      <h1>A navigator that keeps going, <span class="hl">even when GPS lies.</span></h1>
       <p class="lead">Deya is a free offline navigator for Android. When GPS is jammed or spoofed,
         it <b>keeps guiding you</b> using the phone’s sensors, rear camera and a map of your city.</p>
       <div class="cta">
@@ -119,19 +119,19 @@
       </div>
       <p class="meta label"><span>Free</span><span>Android 8.0+</span><span class="apk-meta" hidden></span></p>
     </div>
-    <div class="scope">
-      <video autoplay muted loop playsinline poster="../img/hero-3d-poster.jpg" aria-label="Night Kyiv in 3D: the position dot drives along a street while a fake GPS signal jumps away">
-        <source src="../img/hero-3d.webm" type="video/webm">
-        <source src="../img/hero-3d.mp4" type="video/mp4">
-      </video>
-      <div class="shade"></div>
-      <div class="hud top"><span>Kyiv<span class="opt"> · night drive</span></span><span class="coords">50.4501° N · 30.5234° E</span></div>
-      <div class="hud bot">
-        <div class="row"><span class="k">GPS</span><span class="gps warn">Jammed</span></div>
-        <div class="row"><span class="k">Source</span><span>Sensors · camera · map</span></div>
-        <div class="row"><span class="k">On road</span><span class="ok">Yes</span></div>
+    <div class="demo">
+      <div class="handset"><video autoplay muted loop playsinline poster="../img/hero-poster-en.jpg" aria-label="Screen recording of Deya: GPS drops out and navigation carries on using the camera and sensors">
+        <source src="../img/hero-en.webm" type="video/webm">
+        <source src="../img/hero-en.mp4" type="video/mp4">
+      </video></div>
+      <div class="readout">
+        <p class="label">Screen recording · 12 s</p>
+        <div class="ro"><span class="k label">GPS</span><span class="v gps"></span></div>
+        <div class="ro"><span class="k label">Position from</span><span class="v src"></span></div>
+        <div class="ro"><span class="k label">Route</span><span class="v ok">Still guiding</span></div>
+        <p class="cap"></p>
       </div>
-      <div class="frame"></div><i class="c tl"></i><i class="c tr"></i><i class="c bl"></i><i class="c br"></i>
+      <i class="c tl"></i><i class="c tr"></i><i class="c bl"></i><i class="c br"></i>
     </div>
   </div>
   <div class="specs">
@@ -346,7 +346,10 @@
 </footer>
 
 <script>
-  var L = { ver: 'Version ', mb: ' MB', jam: 'Jammed', fake: 'Fake · ignored' };
+  var L = { ver: 'Version ', mb: ' MB', demo: [
+    { t: 0,   gps: 'Working',  src: 'Satellites',       c: 'ok',   cap: 'GPS is fine. Deya follows it and calibrates the camera and sensors.' },
+    { t: 2.5, gps: 'Jammed',   src: 'Camera + sensors', c: 'warn', cap: 'GPS is gone. Deya keeps guiding you using the camera, sensors and map.' },
+    { t: 9.5, gps: 'Back',     src: 'Satellites',       c: 'ok',   cap: 'GPS is back and the position matches. You stayed on route the whole time.' } ] };
 </script>
 <script src="../assets/site.js"></script>
 

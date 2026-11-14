@@ -45,28 +45,23 @@
   });
 
   var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var hero = document.querySelector('.scope video');
+  var hero = document.querySelector('.demo video');
 
-  // Respect reduced motion: show the still frame instead of the looping hero clip.
+  // Respect reduced motion: show the still frame instead of the looping screen recording.
   if (reduce && hero) { hero.removeAttribute('autoplay'); hero.pause(); }
 
-  // HUD: GPS row follows the clip (the dot glitches red near the end), coordinates drift.
-  var gps = document.querySelector('.scope .gps');
-  if (hero && gps) {
-    hero.addEventListener('timeupdate', function () {
-      var fake = hero.currentTime > 3.7;
-      gps.textContent = fake ? L.fake : L.jam;
-      gps.style.color = fake ? 'var(--red)' : '';
-    });
+  // Readout next to the phone follows what happens in the recording.
+  var gps = document.querySelector('.demo .gps'), src = document.querySelector('.demo .src'), cap = document.querySelector('.demo .cap');
+  function showState(t) {
+    if (!L.demo || !gps) return;
+    var st = L.demo[0];
+    L.demo.forEach(function (s) { if (t >= s.t) st = s; });
+    if (gps.textContent === st.gps) return;
+    gps.textContent = st.gps; gps.className = 'v gps ' + st.c;
+    src.textContent = st.src; cap.textContent = st.cap;
   }
-  var coords = document.querySelector('.scope .coords');
-  if (coords && !reduce) {
-    var lat = 50.4501, lon = 30.5234;
-    setInterval(function () {
-      lat += 0.00004; lon += 0.00007;
-      coords.textContent = lat.toFixed(4) + '° N · ' + lon.toFixed(4) + '° E';
-    }, 400);
-  }
+  showState(0);
+  if (hero) hero.addEventListener('timeupdate', function () { showState(hero.currentTime); });
 
   // Reveal sections as they scroll in.
   document.documentElement.classList.add('js');
