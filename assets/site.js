@@ -38,6 +38,19 @@
     a.addEventListener('click', function () { trackApk(a); });
     a.addEventListener('auxclick', function (e) { if (e.button === 1) trackApk(a); });
   });
+  // Google Play badge clicks. The link opens in a new tab / the Play app, so the page stays and the hit is sent.
+  function trackPlay(a) {
+    if (typeof gtag !== 'function') return;
+    gtag('event', 'open_google_play', {
+      link_url: a.href,
+      button_place: a.getAttribute('data-place') || '',
+      transport_type: 'beacon'
+    });
+  }
+  document.querySelectorAll('a.gp-badge').forEach(function (a) {
+    a.addEventListener('click', function () { trackPlay(a); });
+    a.addEventListener('auxclick', function (e) { if (e.button === 1) trackPlay(a); });
+  });
   document.querySelectorAll('a[href^="https://t.me/"]').forEach(function (a) {
     a.addEventListener('click', function () {
       if (typeof gtag === 'function') gtag('event', 'open_telegram', { link_url: a.href });
