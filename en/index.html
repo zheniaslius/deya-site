@@ -72,6 +72,14 @@
   {
    "@type": "FAQPage",
    "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Does Deya support OBD adapters?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. A common ELM327 adapter with Bluetooth or Bluetooth LE works. Deya reads only the car's speed, and asks for the Nearby devices permission only when you tap “Connect OBD adapter”."
+     }
+    },
     {"@type": "Question", "name": "Do I need internet?", "acceptedAnswer": {"@type": "Answer", "text": "Only to download the map of your city (and, optionally, to refine your start area with Gemini if you turn that option on yourself). After that Deya works out where you are and plans routes completely offline."}},
     {"@type": "Question", "name": "Which phone do I need?", "acceptedAnswer": {"@type": "Answer", "text": "An Android 8.0 or newer smartphone with a rear camera, a gyroscope and an accelerometer. Almost all modern phones have them."}},
     {"@type": "Question", "name": "How accurate is it without GPS?", "acceptedAnswer": {"@type": "Answer", "text": "In a city with plenty of turns, Deya usually keeps you on the right street. On long straight roads without turns the error slowly grows, and it is corrected again as soon as you reach a turn or real GPS returns. If Deya gets lost, tap the marker button and show it on the map where you are."}},
@@ -168,6 +176,21 @@
         <p>OpenStreetMap roads are stored on the phone. Your position always snaps to a real road.</p>
       </div>
     </div>
+
+    <div class="obd rv">
+      <div class="obd-main">
+        <div class="top"><span class="label">+ / OBD adapter <span class="opt-tag">· optional</span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 15a8 8 0 1 1 16 0"/><path d="m12 15 4-5"/><circle cx="12" cy="15" r="1.3" fill="currentColor"/><path d="M7 19h10"/></svg></div>
+        <h3>Speed straight from the car</h3>
+        <p>Have an OBD adapter? Plug it into the OBD port under the dashboard, tap “Connect OBD adapter” in Deya’s settings, and it reads the car’s own speed. That’s the most precise source: a stop is always exactly 0 km/h, and the camera doesn’t switch on at all.</p>
+      </div>
+      <ul class="obd-spec label">
+        <li>ELM327 · Bluetooth and BLE</li>
+        <li>Speed only · writes nothing to the car</li>
+        <li>Data stays on the phone</li>
+        <li>Without an adapter everything works as before</li>
+      </ul>
+    </div>
+
 
     <div class="modes rv">
       <p class="label">The pill at the top of the screen shows where your position comes from</p>
@@ -270,6 +293,10 @@
       <h2>Frequently asked questions</h2>
     </div>
     <div class="faq rv">
+      <details>
+        <summary>Does Deya support OBD adapters?</summary>
+        <p>Yes. A common ELM327 adapter with Bluetooth or Bluetooth LE works (Vgate, Vlinker, Veepeak, cheap “OBD2” ones). Pair a classic Bluetooth adapter in the phone’s settings first (PIN usually 1234); Deya finds a BLE adapter by itself. Deya asks for the Nearby devices permission only when you tap “Connect OBD adapter”. It reads nothing from the car but its speed.</p>
+      </details>
       <details>
         <summary>Do I need internet?</summary>
         <p>Only to download the map of your city (and, optionally, to refine your start area with Gemini if you turn that option on yourself). After that Deya works out where you are and plans routes completely offline.</p>
